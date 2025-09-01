@@ -1,10 +1,8 @@
-// src/routes/adminRoutes.js
 const express = require('express');
 const router = express.Router();
 
-// Example route
 router.get('/dashboard', (req, res) => {
-  res.json({ message: 'Admin dashboard' });
+  res.json({ message: 'Coordinator dashboard' });
 });
 
 module.exports = router;

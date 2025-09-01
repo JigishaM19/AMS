@@ -15,13 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Import Routes
 const authRoutes = require('./src/routes/authRoutes');
-const adminRoutes = require('./src/routes/adminRoutes');
-const coordinatorRoutes = require('./src/routes/coordinatorRoutes');
 const hodRoutes = require('./src/routes/hodRoutes');
-const parentRoutes = require('./src/routes/parentRoutes');
-const studentRoutes = require('./src/routes/studentRoutes');
-const teacherRoutes = require('./src/routes/teacherRoutes');
-
 // Root route (for quick check in browser)
 app.get('/', (req, res) => {
   res.send('🚀 ABAMS Backend is Running!');
@@ -31,12 +25,7 @@ app.get('/', (req, res) => {
 app.use('/api/auth', authRoutes);
 
 // Role-based routes
-app.use('/api/admin', adminRoutes);
 app.use('/api/hod', hodRoutes);
-app.use('/api/coordinator', coordinatorRoutes);
-app.use('/api/teacher', teacherRoutes);
-app.use('/api/parent', parentRoutes);
-app.use('/api/student', studentRoutes);
 
 // 404 Handler
 app.use((req, res, next) => {
